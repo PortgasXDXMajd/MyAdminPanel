@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/helpers/responsiveness.dart';
+import 'package:flutter_app/widgets/side-menu.dart';
 import 'package:flutter_app/widgets/top-nav.dart';
 
 
@@ -18,7 +19,11 @@ class _SiteLayoutState extends State<SiteLayout> {
         child: Scaffold(
           key: scaffoldKey,
           appBar: topNavAppBar(context,scaffoldKey),
-          drawer: Drawer(),
+          backgroundColor: Colors.black.withOpacity(0.01),
+          drawer:ResponsiveWidget.isSmallScreen(context)?
+          Drawer(
+            child: SideMenu(),
+          ):null,
           body: ResponsiveWidget(),
         )
     );
