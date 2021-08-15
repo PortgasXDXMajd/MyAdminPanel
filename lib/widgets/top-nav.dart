@@ -25,7 +25,7 @@ AppBar topNavAppBar(BuildContext context, GlobalKey<ScaffoldState> key){
     title: Row(
       children: [
         Visibility(
-          visible: !ResponsiveWidget.isSmallScreen(context),
+          visible: ResponsiveWidget.isLargeScreen(context),
           child: CustomText(text: 'My Admin Panel', color: lightGrey, size: 20, weight: FontWeight.bold,),
         ),
         Expanded(child: Container()),
