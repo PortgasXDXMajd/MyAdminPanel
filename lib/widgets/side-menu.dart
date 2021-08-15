@@ -54,9 +54,11 @@ class _SideMenuState extends State<SideMenu> {
                       itemName: itemName == authenticationPageRoute?"Log out" : itemName,
                       onTap: (){
                         if(!menuController.isActive(itemName)){
+                          navigationController.navigateTo(itemName);
                           menuController.changeActiveItemTo(itemName);
                           if(ResponsiveWidget.isSmallScreen(context))
                             Get.back();
+                          
                         }
                       }
                   )).toList()

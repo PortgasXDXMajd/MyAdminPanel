@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/helpers/local-navigator.dart';
 
 class SiteLayoutSmallScreen extends StatefulWidget {
   @override
@@ -8,8 +9,6 @@ class SiteLayoutSmallScreen extends StatefulWidget {
 class _SiteLayoutSmallScreenState extends State<SiteLayoutSmallScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.green,
-    );
+    return localNavigator();
   }
 }
