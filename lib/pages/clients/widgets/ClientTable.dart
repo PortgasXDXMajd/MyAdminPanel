@@ -56,7 +56,7 @@ class ClientsDataTable extends StatelessWidget {
               rows: List<DataRow>.generate(
                   7, (index) => DataRow(
                   cells: [
-                    DataCell(CustomText(text: '$index',)),
+                    DataCell(CustomText(text: '${index}',)),
                     DataCell(CustomText(text: 'Mohamed Ba Omar',)),
                     DataCell(CustomText(text: 'Aachen, Germany',)),
                     DataCell(

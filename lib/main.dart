@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/controllers/menu-controller.dart';
 import 'package:flutter_app/controllers/navigation-controller.dart';
 import 'package:flutter_app/layout.dart';
+import 'package:flutter_app/pages/404/error.dart';
+import 'package:flutter_app/pages/authentication.dart';
+import 'package:flutter_app/pages/clients/clients.dart';
+import 'package:flutter_app/pages/drivers/drivers.dart';
+import 'package:flutter_app/routing/routes.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -21,6 +26,12 @@ class _MyAdminAppState extends State<MyAdminApp> {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      initialRoute: authenticationPageRoute,
+      unknownRoute: GetPage(name: '/not-found',page: ()=>PageNotFound(),transition: Transition.fadeIn),
+      getPages: [
+        GetPage(name: rootRoute,page: ()=>SiteLayout()),
+        GetPage(name: authenticationPageRoute,page: ()=>AuthenticationPage()),
+      ],
       debugShowCheckedModeBanner: false,
       title: 'My Admin Panel',
       theme: ThemeData(
@@ -36,7 +47,6 @@ class _MyAdminAppState extends State<MyAdminApp> {
         }),
         primaryColor: Colors.blueAccent,
       ),
-      home: SiteLayout(),
     );
   }
 }

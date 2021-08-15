@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/constants/colors.dart';
 import 'package:flutter_app/constants/controllers.dart';
 import 'package:flutter_app/helpers/responsiveness.dart';
+import 'package:flutter_app/pages/authentication.dart';
 import 'package:flutter_app/routing/routes.dart';
 import 'package:flutter_app/widgets/CustomText.dart';
 import 'package:flutter_app/widgets/side_menu_item.dart';
@@ -50,14 +51,19 @@ class _SideMenuState extends State<SideMenu> {
 
               Column(
                   mainAxisSize: MainAxisSize.min,
-                  children: sideMenuItems.map((itemName) => SideMenuItem(
-                      itemName: itemName == authenticationPageRoute?"Log out" : itemName,
+                  children: sideMenuItems.map((item) => SideMenuItem(
+                      itemName: item.name,
                       onTap: (){
-                        if(!menuController.isActive(itemName)){
-                          navigationController.navigateTo(itemName);
-                          menuController.changeActiveItemTo(itemName);
+                        if(item.route == authenticationPageRoute){
+                          menuController.changeActiveItemTo(overViewDisplayName);
+                          Get.offAllNamed(authenticationPageRoute);
+                        }
+                        if(!menuController.isActive(item.name)){
+                          navigationController.navigateTo(item.name);
+                          menuController.changeActiveItemTo(item.name);
                           if(ResponsiveWidget.isSmallScreen(context))
                             Get.back();
+                            navigationController.navigateTo(item.route);
                           
                         }
                       }
