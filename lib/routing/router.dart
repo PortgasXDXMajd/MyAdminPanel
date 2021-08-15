@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/pages/authentication.dart';
-import 'package:flutter_app/pages/clients.dart';
-import 'package:flutter_app/pages/drivers.dart';
+import '../pages/clients/clients.dart';
+import '../pages/drivers/drivers.dart';
 import '../pages/overview/overview.dart';
 import 'package:flutter_app/routing/routes.dart';
 
