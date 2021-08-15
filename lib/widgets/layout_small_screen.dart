@@ -9,6 +9,9 @@ class SiteLayoutSmallScreen extends StatefulWidget {
 class _SiteLayoutSmallScreenState extends State<SiteLayoutSmallScreen> {
   @override
   Widget build(BuildContext context) {
-    return localNavigator();
+    return Padding(
+      padding: EdgeInsets.all(16),
+      child: localNavigator(),
+    );
   }
 }

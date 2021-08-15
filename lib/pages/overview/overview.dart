@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/constants/controllers.dart';
 import 'package:flutter_app/helpers/responsiveness.dart';
-import 'package:flutter_app/pages/overview/widgets/info-card.dart';
 import 'package:flutter_app/pages/overview/widgets/overview-card-large.dart';
 import 'package:flutter_app/pages/overview/widgets/overview-card-medium.dart';
 import 'package:flutter_app/pages/overview/widgets/overview-card-small.dart';
@@ -40,7 +39,7 @@ class _OverviewPageState extends State<OverviewPage> {
     {
       "title":"Scheduled deliveries",
       "value":"7",
-      "color":Colors.orange,
+      "color":Colors.amber,
       "isActive":false,
       "onTap":(){}
     },

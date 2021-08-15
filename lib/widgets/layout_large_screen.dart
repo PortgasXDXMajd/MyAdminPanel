@@ -21,7 +21,10 @@ class _SiteLayoutLargeScreenState extends State<SiteLayoutLargeScreen> {
         ),
         Expanded(
           flex: 5,
-          child: localNavigator()
+          child: Padding(
+            padding: EdgeInsets.all(16),
+            child: localNavigator(),
+          )
         )
       ],
     );
