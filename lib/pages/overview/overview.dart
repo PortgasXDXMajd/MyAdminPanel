@@ -2,9 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/constants/controllers.dart';
 import 'package:flutter_app/helpers/responsiveness.dart';
+import 'package:flutter_app/pages/overview/widgets/available-driver.dart';
+import 'package:flutter_app/pages/overview/widgets/data-table.dart';
 import 'package:flutter_app/pages/overview/widgets/overview-card-large.dart';
 import 'package:flutter_app/pages/overview/widgets/overview-card-medium.dart';
 import 'package:flutter_app/pages/overview/widgets/overview-card-small.dart';
+import 'package:flutter_app/pages/overview/widgets/revenue-large.dart';
+import 'package:flutter_app/pages/overview/widgets/revenue-small.dart';
 import 'package:flutter_app/widgets/CustomText.dart';
 import 'package:get/get.dart';
 
@@ -60,7 +64,7 @@ class _OverviewPageState extends State<OverviewPage> {
           ],
         )),
 
-        SizedBox(height: 100,),
+        SizedBox(height: ResponsiveWidget.isSmallScreen(context)? 0:50,),
 
         Expanded(
           child: ListView(
@@ -70,7 +74,15 @@ class _OverviewPageState extends State<OverviewPage> {
               else if(ResponsiveWidget.isMediumScreen(context))
                 OverviewMediumCardWidget(data: infoCardData,)
               else
-                OverViewSmallCardWidget(data: infoCardData,)
+                OverViewSmallCardWidget(data: infoCardData,),
+
+              if(ResponsiveWidget.isSmallScreen(context))
+                RevenueSectionSmall()
+              else
+                RevenueSectionLarge(),
+
+              AvailableDriverDataTable(),
+
             ],
           ),
         )
